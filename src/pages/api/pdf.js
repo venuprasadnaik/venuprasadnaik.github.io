@@ -1,7 +1,8 @@
-import { readFileSync } from 'fs';
+import { promises as fs } from 'fs';
 import { DateTime } from 'luxon';
-import { generate } from 'randomstring';
+import path from 'path';
 import { launch } from 'puppeteer';
+import { generate } from 'randomstring';
 
 
 const names = ['Anu', 'Venu'];
@@ -66,8 +67,8 @@ async function savePdf(htmlFile, outputFile) {
 }
 export default async (req, res) => {
     const { name } = req.query;
-    const filePath = './public/static/GNET.html';
-    let fileContent = readFileSync(filePath, 'utf-8');
+    const jsonDirectory = path.join(process.cwd(), 'public/static');
+    let fileContent = await fs.readFile(jsonDirectory + '/GNET.html', 'utf8');
     if (name === 'Venu') {
         fileContent = replaceAll(fileContent, 'Anu Madhure C M', 'Venuprasad Naik');
         fileContent = replaceAll(fileContent, 'Anu1996', 'Venu1997');
