@@ -3,6 +3,7 @@ import { DateTime } from 'luxon';
 import { generate } from 'randomstring';
 import { launch } from 'puppeteer';
 
+
 const names = ['Anu', 'Venu'];
 const alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 const min = 100000;
@@ -65,7 +66,7 @@ async function savePdf(htmlFile, outputFile) {
 }
 export default async (req, res) => {
     const { name } = req.query;
-    const filePath = `/Users/venuprasad/Downloads/GNET.html`;
+    const filePath = './public/static/GNET.html';
     let fileContent = readFileSync(filePath, 'utf-8');
     if (name === 'Venu') {
         fileContent = replaceAll(fileContent, 'Anu Madhure C M', 'Venuprasad Naik');
