@@ -14,8 +14,6 @@
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "fs": "^0.0.1-security",
-    "html-pdf-node": "^1.0.8",
-    "html2pdf.js": "^0.10.1",
     "luxon": "^3.3.0",
     "next": "13.3.0",
     "postcss": "8.4.21",
