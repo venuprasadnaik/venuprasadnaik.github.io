@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import DevImg from "/public/img/report.png";
+import { Poppins } from 'next/font/google';
 import Image from "next/image";
+import { useEffect, useState } from 'react';
 import Resume from "/public/img/anu.png";
+import DevImg from "/public/img/report.png";
 import Twitter from "/public/img/venu.png";
-import { Poppins } from 'next/font/google'
+import { DateTime } from 'luxon';
+import axios from 'axios';
+
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -13,6 +16,35 @@ const poppins = Poppins({
 
 const Bill = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const generatePdf = async (name, event) => {
+    event.preventDefault();
+
+    try {
+      setLoading(true);
+      setError(null);
+
+      const response = await axios.get(`/api/pdf?name=${name}`, {
+        responseType: 'blob',
+      });
+      const blob = new Blob([response.data], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      const currentDate = DateTime.local();
+      const filename = name + "_" + currentDate.monthLong + "_" + currentDate.year;
+      console.log(name);
+      link.setAttribute('download', `${filename}.pdf`);
+      document.body.appendChild(link);
+      link.click();
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => !prevMode);
@@ -30,31 +62,18 @@ const Bill = () => {
   }, [isDarkMode]);
 
   const socialIcons = [
-   
+
     {
       icon: Resume,
       link: "Anu_April_2023.pdf",
-      title: "Anu Bill",
+      title: "Anu",
     },
     {
       icon: Twitter,
       link: "Venu_April_2023.pdf",
-      title: "Venu BIll"
+      title: "Venu"
     }
   ];
-
-  const experienceInYears = () => {
-    const startDate = new Date("08/06/2018");
-    const currentDate = new Date();
-    const diffInMs = Math.abs(currentDate - startDate);
-    const diffInMonths = Math.round(diffInMs / (1000 * 60 * 60 * 24 * 30.44));
-    const years = Math.floor(diffInMonths / 12);
-    const months = diffInMonths % 12;
-    const yearString = years > 0 ? years + " year" + (years > 1 ? "s" : "") : "";
-    const monthString =
-      months > 0 ? " and " + months + " month" + (months > 1 ? "s" : "") : "";
-    return yearString + monthString;
-  };
 
   return (
     <main className={poppins.className}>
@@ -72,19 +91,19 @@ const Bill = () => {
           />
           <div className="col-10 col-sm-10 col-lg-7 col-md-7 center spacing">
             <h1>Internet Bill Generator</h1>
-            
+
             <div className="col-md-6 col-sm-7 center">
               <div className="row" id="social-list">
                 {socialIcons.map((icon, index) => (
                   <a
                     key={index}
-                    href={icon.link}
+                    href="#" onClick={(event) => generatePdf(icon.title, event)}
                     target="_blank"
                     rel="noopener noreferrer"
                     title={icon.title}
                     className="center"
                   >
-                    <Image src={icon.icon} width={150} height={150} className="center nextimg" />
+                    <Image src={icon.icon} width={150} height={150} className="center nextimg" alt="Download" />
                   </a>
                 ))}
               </div>
