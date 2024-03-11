@@ -1,0 +1,224 @@
+%-------------------------
+% Resume in Latex
+% Author : Venuprasad Naik
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\item}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\item{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\itemListStart}{\begin{itemize}}
+\newcommand{\itemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://sourabhbajaj.com/}{\Large Venuprasad Naik}} & Email : \href{mailto:vpnaik97@gmail.com}{vpnaik97@gmail.com}\\
+  \href{http://sourabhbajaj.com/}{linkedin.com/in/venuprasad} & Mobile : \href{tel:+11234567890}{+91 72598 16840} \\
+\end{tabular*}
+
+%-----------OBJECTIVE-----------------
+\section{Objective}
+      {
+      Detail-oriented and results-driven Senior Software Developer with a proven track record in microservices architecture, distributed systems, and cloud technologies, Specializing in Helidon, a framework that incorporates and supports Eclipse MicroProfile specifications. Currently leading the implementation of Microservice Patterns such as Sagas for reliable and fault-tolerant transaction processing. Proficient in enhancing system visibility and performance through the integration of OpenAPI, metrics, health checks, and Distributed Tracing using Helidon. Experienced in creating and optimizing Grafana Dashboards for comprehensive monitoring of system, application, and infrastructure metrics. Committed to advancing technological innovation, I am eager to contribute my skills and experience to drive success in challenging software development projects.
+      }
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {B V B College of Engineering and Technology}{Hubli, Karnataka, India}
+      {Bachelor of Engineering in Computer Science and Engineering;  GPA: 8.58/10.0}{Aug. 2014 -- June. 2018}
+      % {B V B College of Engineering & Technology}{Hubli, India}
+      % {Bachelor of Engineering in Computer Science and Engineering; GPA: 8.58/10.0 }{Aug. 2014 -- June. 2018}
+  \resumeSubHeadingListEnd
+
+%--------SKILLS------------
+\section{Skills}
+    {
+     Microservices Architecture,  Distributed Tracing,  OCI Streams, Helm, Kubernetes, OpenAPI, Metrics, MicroProfile Health, Clean Coding Practices, Authentication and Authorization
+    }
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Oracle India Development Centre}{Bangalore, India}
+      {Senior Software Developer }{Feb 2022 - Present}
+      \itemListStart
+        \item 
+          {Valuable member of the Fusion Service team, specializing in microservices architecture with a focus on Helidon, a framework that incorporates and supports Eclipse MicroProfile specifications.}
+        \item
+        {Leading the implementation of Microservice Pattern: Sagas for reliable and fault-tolerant transaction processing.}
+          \item
+          {Implemented Distributed Tracing to trace requests across multiple microservices, enhancing visibility and debugging capabilities.}
+          \item 
+          {Developed and implemented a pattern matching algorithm for rule-based systems, contributing to the intelligence and flexibility of the platform.}
+          \item 
+          {Enhanced real-time event-driven communication through the implementation of a key microservice for Producer and Consumer using OCI Streams, ensuring efficient and scalable event-driven communication.}
+          \item 
+          {Integrated OpenAPI, metrics, health checks, and Distributed Tracing using Helidon for comprehensive service documentation and monitoring.}
+          \item 
+          {Implemented Grafana Dashboard to monitor system, application, and infrastructure, utilizing created and system metrics for enhanced visibility and performance analysis.}
+          \item 
+          {Led efforts in AuthZ and AuthN, ensuring robust and secure authentication and authorization mechanisms.}
+          \item 
+          {Spearheaded various Proof of Concept (PoC) initiatives in 2022, exploring diverse services within the platform.}
+          \item 
+          {Orchestrated successful PoCs for the Data Abstraction Service, including modules, business objects, views, attributes, and REST API implementations.}
+          \item 
+          {Explored and configured the Messaging service SDK, producing documentation for microservices.}
+          \item 
+          {Collaborated on demonstrating Data Abstraction Service capabilities, showcasing REST APIs and UI elements to stakeholders.}
+          \item 
+          {Engineered a microservice using Helidon and integrated Kubernetes CRD configuration for blueprints and instances, deploying through Helm charts.}
+          \item 
+          {Conducted research on conditional evaluation algorithms, successfully implementing them within the service.}
+          \item 
+          {Advocated for clean coding practices, incorporating annotations and best practices to elevate code quality.}
+          \item 
+          {Enhanced security by implementing authentication mechanisms using OCI's IDCS and ensuring the security of REST endpoints.}
+          \item 
+          {Played a key role in advancing a multi-tenant platform for shared services within the Cloud Platform Engineering Team.}
+          \item 
+          {Collaborated on the integration of Log Analytics for Ingress Traffic using Service Connector Hub, Logging Analytics, Python OCI SDK, and Terraform.}
+          \item 
+          {Designed and implemented a Java-based microservice for platform monitoring on Oracle Kubernetes Engine, enhancing visibility through Grafana, Prometheus, Thanos, Loki, Jaeger, and Kafka.}
+      \itemListEnd
+      
+% --------Multiple Positions Heading------------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \itemListStart
+%        \item{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \itemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {Mercedes-Benz Research and Development India}{Bangalore, India}
+      {Consultant }{Aug 2018 - Jan 2022}
+      \itemListStart
+        \item
+          {Led the development of a vital in-house software application essential for Electronic Control Unit (ECU) Development.}
+        \item
+          {Collaborated with cross-competency teams to address complex business requirements and system design.}
+        \item
+          {Proficient in a technology stack including Core Java, Spring Framework, MS-SQL, Maven, JFrog, Jenkins, Git, and SonarQube.}
+        \item
+          {Incorporated IAM OIDC identity provider into the web application using the Spring Framework, elevating security measures and fortifying user authentication.}
+        \item
+          {Conducted extensive backend code refactoring, optimization, and performance improvements.}
+        \item
+          {Engineered a Maven library for parsing Metadata Exchange Format (MDX) and XML data from scratch.}
+        \item
+          {Ensured high-quality software delivery through regular code reviews and adherence to standard methodologies.}
+        \item
+          {Front-End Developer for a React.js Web Application using MobX.js and Axios.js.}
+        \item
+          {Developed an Analytical and Monitoring application for a cloud-based billing solution using React.js, JSON, and Fluent UI.}
+      \itemListEnd
+  \resumeSubHeadingListEnd
+
+% --------CERTIFICATION------------
+\section{Certifications}
+ \resumeSubHeadingListStart
+   \item{
+        \textbf{Problem Solving (Advanced) }{HackerRank}
+   }
+   \item {
+        \textbf{Oracle Cloud Infrastructure Foundations 2021 Associate}{ Oracle}
+   }
+   \item{
+        \textbf{Advanced Java Programming }{LinkedIn}
+   }
+   \item{
+        \textbf{Data Structures and Algorithms }{edX with Georgia Tech}
+   }
+ \resumeSubHeadingListEnd
+
+%
+%-------------------------------------------
+\end{document}
