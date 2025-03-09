@@ -65,8 +65,13 @@ jobs:
       - name: Export static site with Next.js
         run: ${{ env.runner }} next export
 
+      - name: Check for symlinks and hard links
+        run: |
+          find ./out -type l
+          find ./out -type f -links +1
+
       - name: Check output directory
-        run: ls -l ./out
+        run: find ./out -type f
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
