@@ -42,11 +42,11 @@ const Home = () => {
       link: "https://www.linkedin.com/in/venuprasad/",
       title: "LinkedIn",
     },
-    {
-      icon: Resume,
-      link: "/resume/Venuprasad_Naik_Software_Developer.pdf",
-      title: "Resume",
-    },
+    // {
+    //   icon: Resume,
+    //   link: "/resume/Venuprasad_Naik_Software_Developer.pdf",
+    //   title: "Resume",
+    // },
     {
       icon: Twitter,
       link: "https://www.stackoverflow.com/story/venuprasad",
